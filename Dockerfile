@@ -5,7 +5,7 @@ FROM ruby:2.7.2
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update -qq && apt-get install -y nodejs mariadb-client yarn
-RUN mkdir /catabolic_alert
+RUN mkdir /meat_head
 # WORKDIR 作業ディレクトリの指定
 WORKDIR /meat_head
 COPY Gemfile /meat_head/Gemfile
