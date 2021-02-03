@@ -79,6 +79,9 @@ GEM
     ffi (1.14.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hpricot (0.8.6)
+    html2slim (0.2.0)
+      hpricot
     i18n (1.8.8)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -198,6 +201,10 @@ GEM
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
+    slim-rails (3.2.0)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (>= 3.0, < 5.0)
     slim_lint (0.20.2)
       rubocop (>= 0.78.0)
       slim (>= 3.0, < 5.0)
@@ -245,6 +252,7 @@ DEPENDENCIES
   binding_of_caller
   bootsnap (>= 1.4.2)
   byebug
+  html2slim
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
@@ -254,6 +262,7 @@ DEPENDENCIES
   rails_best_practices
   sass-rails (>= 6)
   scss_lint
+  slim-rails
   slim_lint
   spring
   spring-watcher-listen (~> 2.0.0)
