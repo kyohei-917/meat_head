@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      question: "質問"
+    attributes:
+      question:
+        question_text: "質問文"
+        choice: "選択肢"
