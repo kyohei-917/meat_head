@@ -1,0 +1,17 @@
+h1 質問詳細
+table
+  tr
+    th = 'ID'
+    td = @question.id
+
+  tr
+    th = '質問内容'
+    td = @question.question_text
+
+  tr
+    th = '選択'
+    td = @question.choice
+
+  tr
+    th = link_to '編集', edit_question_path
+    th = link_to 'トップ', root_path

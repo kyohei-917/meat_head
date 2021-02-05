@@ -1,0 +1,18 @@
+h2 質問一覧
+
+table
+  tr
+    th = 'ID'
+    th = '質問内容'
+    th
+  - @questions.each do |question|
+    tr
+      td = link_to question.id, question
+      td = question.question_text
+      td
+         = link_to '編集', edit_question_path(question)
+      td
+         = link_to '削除', question, method: :delete, data: { confirm: "削除しますか？" }
+  
+  = link_to '質問作成', new_question_path
+

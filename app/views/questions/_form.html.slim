@@ -1,0 +1,10 @@
+= form_with model: @question do |f|
+  .form-group
+    = f.label :question_text
+    = f.text_field :question_text
+  .form-group
+    = f.label "yes"
+    = f.radio_button :choice, :yes
+    = f.label "no"
+    = f.radio_button :choice, :no
+  = f.submit

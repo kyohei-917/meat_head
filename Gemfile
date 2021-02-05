@@ -56,3 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # slim化
 gem 'slim-rails'
 gem 'html2slim'
+
+# 日本語化
+gem 'rails-i18n'
+gem 'enum_help'
