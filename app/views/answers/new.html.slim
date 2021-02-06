@@ -1,0 +1,35 @@
+/ = form_with model: @answer do |f|
+/   / .form-group
+/   /   = f.label :question_id
+/   /   = f.text_field :question_id
+/   .form-group
+/     = f.label "yes"
+/     = f.radio_button :choice, :yes
+/     = f.label "no"
+/     = f.radio_button :choice, :no
+/   = f.submit
+
+h2 質問５つ
+h3 ここで１問ずつ回答していく
+
+table
+  tr
+    / th = 'ID'
+    th = '質問内容'
+    th = '回答'
+  - @questions.each do |question|
+    tr
+      / td = link_to question.id, question
+      td = question.question_text
+      td = form_with model: @answer do |f|
+          / .form-group
+          /   = f.label :question_id
+          /   = f.text_field :question_id
+          .form-group
+            = f.label "yes"
+            = f.radio_button :choice, :yes
+            = f.label "no"
+            = f.radio_button :choice, :no
+          = f.submit
+
+
