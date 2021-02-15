@@ -27,4 +27,4 @@
 
 
 ## ER図
-<img width="766" alt="スクリーンショット 2021-02-15 13 02 01" src="https://user-images.githubusercontent.com/67542616/107904124-3d55bb80-6f8e-11eb-9938-ece5d856317c.png">
+<img width="743" alt="スクリーンショット 2021-02-16 6 44 02" src="https://user-images.githubusercontent.com/67542616/107995953-91aa7b00-7022-11eb-8875-77c18c3f2d1b.png">
