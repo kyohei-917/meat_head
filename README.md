@@ -27,5 +27,4 @@
 
 
 ## ER図
-作成途中
-![Untitled Diagram](https://user-images.githubusercontent.com/67542616/106670352-49399900-65f0-11eb-9d30-5b60e13b6bbd.png)
+<img width="766" alt="スクリーンショット 2021-02-15 13 02 01" src="https://user-images.githubusercontent.com/67542616/107904124-3d55bb80-6f8e-11eb-9938-ece5d856317c.png">
