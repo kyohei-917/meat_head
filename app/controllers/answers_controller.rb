@@ -7,11 +7,12 @@ class AnswersController < ApplicationController
 
   def new
     @answer = Answer.new
-    @questions = Question.order("RAND()").limit(5)
+    @questions = Question.all
   end
 
   def create
     @answer = Answer.new(answer_params)
+    @answer.user_id = current_user＆.id
     if @answer.save
       render new_answer_path
     else

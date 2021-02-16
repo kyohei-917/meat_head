@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root to: 'homes#index'
   get 'homes/index'
 
-  # devise_for :users
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -11,8 +10,11 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
 
-  resources :questions do
+  resources :users
+  resources :answers
+  resources :users do
     resources :answers
   end
-  resources :answers
+
+  resources :questions
 end
