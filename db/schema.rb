@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2021_02_05_053048) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "choice"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -21,12 +20,16 @@ ActiveRecord::Schema.define(version: 2021_02_05_053048) do
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.text "question_text", null: false
+    t.text "text", null: false
+    t.integer "choice", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -39,4 +42,5 @@ ActiveRecord::Schema.define(version: 2021_02_05_053048) do
   end
 
   add_foreign_key "answers", "users"
+  add_foreign_key "questions", "users"
 end
