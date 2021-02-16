@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :answers, dependent: :destroy
+  has_many :questions, dependent: :destroy
 
   # ゲストユーザー用
   def self.guest
