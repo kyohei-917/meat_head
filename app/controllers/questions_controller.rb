@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[edit show update destroy]
+  before_action :guest_user_valid, only: %i[new create edit update destroy]
 
   def index
     @questions = Question.all
@@ -42,6 +43,12 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:question_text, :choice)
+    params.require(:question).permit(:text, :choice).merge(user_id: current_user.id)
+  end
+
+  def guest_user_valid
+    if current_user.id == 1
+      redirect_to root_path, alert: 'ゲストユーザーは質問の作成、編集、削除はできません'
+    end
   end
 end
