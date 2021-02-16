@@ -5,8 +5,16 @@ table
     td = @question.id
 
   tr
+    th = 'ユーザーID'
+    td = @question.user_id
+
+  tr
     th = '質問内容'
-    td = @question.question_text
+    td = @question.text
+
+  tr
+    th = '脳筋選択肢'
+    td = @question.choice
 
   tr
     th = link_to '編集', edit_question_path

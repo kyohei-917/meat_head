@@ -5,7 +5,7 @@ ja:
       answer: "回答"
     attributes:
       question:
-        question_text: "質問文"
+        text: "質問文"
         choice: "選択肢"
       answer:
         choice: "選択肢"

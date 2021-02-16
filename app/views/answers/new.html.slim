@@ -7,7 +7,7 @@ table
     th = '回答'
   - @questions.shuffle.first(7).each do |question|
     tr
-      td = question.question_text
+      td = question.text
       td = form_with model: @answer do |f|
         .form-group
           = f.label "yes"
