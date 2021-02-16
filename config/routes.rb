@@ -11,10 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  resources :answers
-  resources :users do
-    resources :answers
-  end
-
   resources :questions
+  resources :answers do
+    resources :answer_details
+  end
 end

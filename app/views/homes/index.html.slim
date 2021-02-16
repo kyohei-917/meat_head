@@ -1,7 +1,7 @@
-h2 トップページ？
+h2 トップページ
 
 ul
   - unless user_signed_in?
     li = link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post
   li = link_to '質問一覧', questions_path
-  li = link_to '回答', new_answer_path
+  li = link_to '診断する', new_answer_path
