@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_02_17_221412) do
 
-  create_table "answer_details", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "answer_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "choice", null: false
     t.bigint "answer_id"
     t.bigint "question_id"
@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 2021_02_17_221412) do
     t.index ["question_id"], name: "index_answer_details_on_question_id"
   end
 
-  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.text "text", null: false
     t.integer "choice", null: false
     t.bigint "user_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_221412) do
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
