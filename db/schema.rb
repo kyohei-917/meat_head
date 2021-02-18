@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_05_053048) do
+ActiveRecord::Schema.define(version: 2021_02_17_221412) do
+
+  create_table "answer_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "choice", null: false
+    t.bigint "answer_id"
+    t.bigint "question_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["answer_id"], name: "index_answer_details_on_answer_id"
+    t.index ["question_id"], name: "index_answer_details_on_question_id"
+  end
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
@@ -41,6 +51,8 @@ ActiveRecord::Schema.define(version: 2021_02_05_053048) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answer_details", "answers"
+  add_foreign_key "answer_details", "questions"
   add_foreign_key "answers", "users"
   add_foreign_key "questions", "users"
 end
