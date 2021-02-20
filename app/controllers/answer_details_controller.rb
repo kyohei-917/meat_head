@@ -7,7 +7,6 @@ class AnswerDetailsController < ApplicationController
   end
 
   def show
-    # binding.pry
     @questions = Question.all
     @question = @questions.find(@answer_detail.question_id)
   end
@@ -18,7 +17,6 @@ class AnswerDetailsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @question = Question.where( 'id >= ?', rand(Question.first.id..Question.last.id) ).first
     @answer_detail = @answer.answer_details.new(answer_detail_params)
     @answer_detail.question_id = @question.id
@@ -47,6 +45,5 @@ class AnswerDetailsController < ApplicationController
 
   def answer_detail_params
     params.require(:answer_detail).permit(:choice)
-    # .merge(question_id: (Question.where( 'id >= ?', rand(Question.first.id..Question.last.id) ).first))
   end
 end
