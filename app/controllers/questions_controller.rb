@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    @question.user_id = current_user.id
     if @question.save
       redirect_to questions_path
     else
@@ -47,7 +48,7 @@ class QuestionsController < ApplicationController
   end
 
   def guest_user_valid
-    if current_user.id == 1
+    if current_user.email == "guest@example.com"
       redirect_to root_path, alert: 'ゲストユーザーは質問の作成、編集、削除はできません'
     end
   end
