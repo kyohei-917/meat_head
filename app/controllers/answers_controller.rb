@@ -7,14 +7,13 @@ class AnswersController < ApplicationController
 
   def new
     @answer = Answer.new
-    @questions = Question.all
   end
 
   def create
-    @answer = Answer.new(answer_params)
-    @answer.user_id = current_user＆.id
+    @answer = Answer.create
+    @answer.user_id = current_user.id
     if @answer.save
-      render new_answer_path
+      redirect_to new_answer_answer_detail_path(@answer.id)
     else
       render :new
     end
@@ -25,14 +24,10 @@ class AnswersController < ApplicationController
     redirect_to answers_path
   end
 
-
   private
 
   def set_answer
     @answer = Answer.find(params[:id])
   end
 
-  def answer_params
-    params.require(:answer).permit(:choice, :question)
-  end
 end
