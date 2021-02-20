@@ -1,18 +1,29 @@
 class AnswerDetailsController < ApplicationController
-  before_action :set_answer, only: %i[edit show update destroy]
+  before_action :set_answer
+  before_action :set_answer_detail, only: %i[show edit update destroy]
 
   def index
-    @answer_details = Answer_detail.all
+    @answer_details = AnswerDetail.all
+  end
+
+  def show
+    # binding.pry
+    @questions = Question.all
+    @question = @questions.find(@answer_detail.question_id)
   end
 
   def new
-    @answer_detail = Answer_detail.new
+    @answer_detail = @answer.answer_details.new
+    @questions = Question.all
   end
 
   def create
-    @answer_detail = Answer_detail.new(answer_detail_params)
+    # binding.pry
+    @question = Question.where( 'id >= ?', rand(Question.first.id..Question.last.id) ).first
+    @answer_detail = @answer.answer_details.new(answer_detail_params)
+    @answer_detail.question_id = @question.id
     if @answer_detail.save
-      redirect_to root_path
+      redirect_to [@answer, @answer_detail]
     else
       render :new
     end
@@ -27,10 +38,15 @@ class AnswerDetailsController < ApplicationController
   private
 
   def set_answer
-    @answer_detail = Answer_detail.find(params[:id])
+    @answer = Answer.find(params[:answer_id])
+  end
+
+  def set_answer_detail
+    @answer_detail = @answer.answer_details.find(params[:id])
   end
 
   def answer_detail_params
-    params.require(:answer_detail).permit(:choice).merge(answer_id: params.answer_id)
+    params.require(:answer_detail).permit(:choice)
+    # .merge(question_id: (Question.where( 'id >= ?', rand(Question.first.id..Question.last.id) ).first))
   end
 end
