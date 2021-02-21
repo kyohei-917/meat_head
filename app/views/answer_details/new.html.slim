@@ -5,7 +5,7 @@ table
   tr
     th = '質問内容'
     th = '回答'
-  - @questions.shuffle.first(1).each do |question|
+  - @question.each do |question|
     tr
       td = question.text
       td = form_with model: [@answer, @answer_detail] do |f|
@@ -15,3 +15,14 @@ table
           = f.label "no"
           = f.radio_button :choice, :no
           = f.submit
+
+  / - @question.each do |question|
+  /   tr
+  /     td = question.text
+  /     td = form_with model: [@answer, @answer_detail] do |f|
+  /       .form-group
+  /         = f.label "yes"
+  /         = f.radio_button :choice, :yes
+  /         = f.label "no"
+  /         = f.radio_button :choice, :no
+  /         = f.submit

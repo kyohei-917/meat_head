@@ -1,4 +1,48 @@
 h2 answer#new
 
-= form_with model: @answer, method: :post do |f|
-  = f.submit '診断テストをうける'
+= form_with model: [@answer], method: :post do |f|
+  =f.label @question.first.text
+  = f.fields_for :answer_details do |d|
+    = d.hidden_field :answer_id, value: @answer.id
+    = d.hidden_field :question_id, value: @question.first.id
+    = d.label "YES"
+    = d.radio_button :choice, :yes
+    = d.label "NO"
+    = d.radio_button :choice, :no
+    br
+  =f.label @question.second.text
+  = f.fields_for :answer_details do |d|
+    = d.hidden_field :answer_id, value: @answer.id
+    = d.hidden_field :question_id, value: @question.second.id
+    = d.label "YES"
+    = d.radio_button :choice, :yes
+    = d.label "NO"
+    = d.radio_button :choice, :no
+    br
+  =f.label @question.third.text
+  = f.fields_for :answer_details do |d|
+    = d.hidden_field :answer_id, value: @answer.id
+    = d.hidden_field :question_id, value: @question.third.id
+    = d.label "YES"
+    = d.radio_button :choice, :yes
+    = d.label "NO"
+    = d.radio_button :choice, :no
+    br
+  =f.label @question.fourth.text
+  = f.fields_for :answer_details do |d|
+    = d.hidden_field :answer_id, value: @answer.id
+    = d.hidden_field :question_id, value: @question.fourth.id
+    = d.label "YES"
+    = d.radio_button :choice, :yes
+    = d.label "NO"
+    = d.radio_button :choice, :no
+    br
+  =f.label @question.fifth.text
+  = f.fields_for :answer_details do |d|
+    = d.hidden_field :answer_id, value: @answer.id
+    = d.hidden_field :question_id, value: @question.fifth.id
+    = d.label "YES"
+    = d.radio_button :choice, :yes
+    = d.label "NO"
+    = d.radio_button :choice, :no
+  = f.submit

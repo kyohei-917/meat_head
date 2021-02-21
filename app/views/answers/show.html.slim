@@ -1,0 +1,92 @@
+table
+  tr
+    th = 'Answer ID'
+    td = @answer.id
+  tr
+    th = 'AnswerDetaiil ID 1'
+    td = @answer.answer_details.ids.first
+  tr
+    th = 'Question ID 1'
+    td = @answer.answer_details.first.question_id
+  tr
+    th = 'AnswerDetail 1 choice'
+    td = @answer.answer_details.first.choice
+  tr
+    th = 'Question 1 choice'
+    td = @answer.answer_details.first.question.choice
+  tr
+    th = '脳筋判定'
+    td = @answer.answer_details.first.choice == @answer.answer_details.first.question.choice ? "脳筋" : "正常"
+br
+table
+  tr
+    th = 'AnswerDetaiil ID 2'
+    td = @answer.answer_details.ids.second
+  tr
+    th = 'Question ID 2'
+    td = @answer.answer_details.second.question_id
+  tr
+    th = 'AnswerDetail 2 choice'
+    td = @answer.answer_details.second.choice
+  tr
+    th = 'Question 2 choice'
+    td = @answer.answer_details.second.question.choice
+  tr
+    th = '脳筋判定'
+    td = @answer.answer_details.second.choice == @answer.answer_details.second.question.choice ? "脳筋" : "正常"
+br
+table
+  tr
+    th = 'AnswerDetaiil ID 3'
+    td = @answer.answer_details.ids.third
+  tr
+    th = 'Question ID 3'
+    td = @answer.answer_details.third.question_id
+  tr
+    th = 'AnswerDetail 3 choice'
+    td = @answer.answer_details.third.choice
+  tr
+    th = 'Question 3 choice'
+    td = @answer.answer_details.third.question.choice
+  tr
+    th = '脳筋判定'
+    td = @answer.answer_details.third.choice == @answer.answer_details.third.question.choice ? "脳筋" : "正常"
+br
+table
+  tr
+    th = 'AnswerDetaiil ID 4'
+    td = @answer.answer_details.ids.fourth
+  tr
+    th = 'Question ID 4'
+    td = @answer.answer_details.fourth.question_id
+  tr
+    th = 'AnswerDetail 4 choice'
+    td = @answer.answer_details.fourth.choice
+  tr
+    th = 'Question 4 choice'
+    td = @answer.answer_details.fourth.question.choice
+  tr
+    th = '脳筋判定'
+    td = @answer.answer_details.fourth.choice == @answer.answer_details.fourth.question.choice ? "脳筋" : "正常"
+br
+table
+  tr
+    th = 'AnswerDetaiil ID 5'
+    td = @answer.answer_details.ids.fifth
+  tr
+    th = 'Question ID 5'
+    td = @answer.answer_details.fifth.question_id
+  tr
+    th = 'AnswerDetail 5 choice'
+    td = @answer.answer_details.fifth.choice
+  tr
+    th = 'Question 5 choice'
+    td = @answer.answer_details.fifth.question.choice
+  tr
+    th = '脳筋判定'
+    td = @answer.answer_details.fifth.choice == @answer.answer_details.fifth.question.choice ? "脳筋" : "正常"
+br
+table
+  tr
+    th = '脳筋度'
+    td = "#{@judge_count.count('脳筋')} / 5"
