@@ -13,11 +13,11 @@ class AnswerDetailsController < ApplicationController
 
   def new
     @answer_detail = @answer.answer_details.new
-    @questions = Question.all
+    @question = Question.order("RAND()").limit(5)
   end
 
   def create
-    @question = Question.where( 'id >= ?', rand(Question.first.id..Question.last.id) ).first
+    @question = Question.order("RAND()").limit(5)
     @answer_detail = @answer.answer_details.new(answer_detail_params)
     @answer_detail.question_id = @question.id
     if @answer_detail.save
