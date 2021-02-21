@@ -1,6 +1,7 @@
 h2 answer#new
 
 = form_with model: [@answer], method: :post do |f|
+  = render 'shared/error_messages', object: f.object
   =f.label @question.first.text
   = f.fields_for :answer_details do |d|
     = d.hidden_field :answer_id, value: @answer.id
