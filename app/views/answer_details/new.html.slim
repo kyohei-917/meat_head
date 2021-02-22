@@ -9,20 +9,10 @@ table
     tr
       td = question.text
       td = form_with model: [@answer, @answer_detail] do |f|
+        = render 'shared/error_messages', object: f.object
         .form-group
           = f.label "yes"
           = f.radio_button :choice, :yes
           = f.label "no"
           = f.radio_button :choice, :no
           = f.submit
-
-  / - @question.each do |question|
-  /   tr
-  /     td = question.text
-  /     td = form_with model: [@answer, @answer_detail] do |f|
-  /       .form-group
-  /         = f.label "yes"
-  /         = f.radio_button :choice, :yes
-  /         = f.label "no"
-  /         = f.radio_button :choice, :no
-  /         = f.submit
