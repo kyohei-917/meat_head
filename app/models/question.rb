@@ -3,4 +3,7 @@ class Question < ApplicationRecord
 
   belongs_to :user
   has_many :answer_details, dependent: :destroy
+
+  validates :choice, presence: true
+  validates :text,   presence: true
 end
