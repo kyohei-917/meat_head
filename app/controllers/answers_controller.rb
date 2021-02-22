@@ -8,7 +8,7 @@ class AnswersController < ApplicationController
   def new
     @answer = Answer.new
     @answer.answer_details.build
-    @question = Question.order("RAND()").limit(5)
+    @questions = Question.order("RAND()").limit(5)
   end
 
   def create
