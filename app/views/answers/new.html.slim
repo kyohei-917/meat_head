@@ -1,17 +1,17 @@
 h2 answer#new
 
 = form_with model: [@answer], method: :post do |f|
-  / = render 'shared/_error_messages', object: f.object
   - @questions.each_with_index do |question, index|
-    = f.label question.text, class: "text-#{ index }"
-    = f.fields_for :answer_details do |d|
-      = d.hidden_field :answer_id, value: @answer.id
-      = d.hidden_field :question_id, value: question.id
-      = d.label "YES", class: "yes-#{ index }"
-      = d.radio_button :choice, :yes, class: "yes-button-#{ index }"
-      = d.label "NO", class: "no-#{ index }"
-      = d.radio_button :choice, :no, class: "no-button-#{ index }"
-      br
+    .question-wrapper*{id: "question-#{index}"}
+      = f.label question.text
+      = f.fields_for :answer_details do |d|
+        = d.hidden_field :answer_id, value: @answer.id
+        = d.hidden_field :question_id, value: question.id
+        = d.label "YES"
+        = d.radio_button :choice, :yes, class: "choice-button-#{index}"
+        = d.label "NO"
+        = d.radio_button :choice, :no, class: "choice-button-#{index}"
+        br
   = f.submit
 
 = javascript_pack_tag 'answer/new'
