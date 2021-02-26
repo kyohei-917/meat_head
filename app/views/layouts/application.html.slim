@@ -6,6 +6,7 @@ html
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/le-frog/jquery-ui.min.css'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
     header
@@ -23,5 +24,4 @@ html
         - flash.each do |key, value|
           p class=("alert alert-#{key}")
             = value
-
     = yield
