@@ -1,17 +1,21 @@
 h2 answer#new
 
+/ = javascript_pack_tag 'answer/new'
+
 = form_with model: [@answer], method: :post do |f|
   - @questions.each_with_index do |question, index|
     .question-wrapper*{id: "question-#{index}"}
-      = f.label question.text
+      = f.label question.text, id: "draggable-#{index}"
       = f.fields_for :answer_details do |d|
         = d.hidden_field :answer_id, value: @answer.id
         = d.hidden_field :question_id, value: question.id
-        = d.label "YES"
-        = d.radio_button :choice, :yes, class: "choice-button-#{index}"
-        = d.label "NO"
-        = d.radio_button :choice, :no, class: "choice-button-#{index}"
+        = d.label "YES", style: "display: none"
+        = d.radio_button :choice, :yes, class: "choice-yes-#{index}", style: "display: none"
+        = d.label "NO", style: "display: none"
+        = d.radio_button :choice, :no, class: "choice-no-#{index}", style: "display: none"
         br
-  = f.submit
-
-= javascript_pack_tag 'answer/new'
+        .ui-widget-content*{id: "droppable-yes-#{index}"}
+          p Y E S
+        .ui-widget-content*{id: "droppable-no-#{index}"}
+          p N O
+  = f.submit '診断結果を確認'
