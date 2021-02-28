@@ -88,5 +88,59 @@ table
 br
 table
   tr
+    th = 'AnswerDetaiil ID 6'
+    td = @answer.answer_details.ids.first(6).last
+  tr
+    th = 'Question ID 6'
+    td = @answer.answer_details.first(6).last.question_id
+  tr
+    th = 'AnswerDetail 6 choice'
+    td = @answer.answer_details.first(6).last.choice
+  tr
+    th = 'Question 6 choice'
+    td = @answer.answer_details.first(6).last.question.choice
+  tr
+    th = '脳筋判定'
+    td = @answer.answer_details.first(6).last.choice == @answer.answer_details.first(6).last.question.choice ? "脳筋" : "正常"
+br
+table
+  tr
+    th = 'AnswerDetaiil ID 7'
+    td = @answer.answer_details.ids.first(7).last
+  tr
+    th = 'Question ID 7'
+    td = @answer.answer_details.first(7).last.question_id
+  tr
+    th = 'AnswerDetail 7 choice'
+    td = @answer.answer_details.first(7).last.choice
+  tr
+    th = 'Question 7 choice'
+    td = @answer.answer_details.first(7).last.question.choice
+  tr
+    th = '脳筋判定'
+    td = @answer.answer_details.first(7).last.choice == @answer.answer_details.first(7).last.question.choice ? "脳筋" : "正常"
+br
+table
+  tr
+    th = 'AnswerDetaiil ID 8'
+    td = @answer.answer_details.ids.first(8).last
+  tr
+    th = 'Question ID 8'
+    td = @answer.answer_details.first(8).last.question_id
+  tr
+    th = 'AnswerDetail 8 choice'
+    td = @answer.answer_details.first(8).last.choice
+  tr
+    th = 'Question 8 choice'
+    td = @answer.answer_details.first(8).last.question.choice
+  tr
+    th = '脳筋判定'
+    td = @answer.answer_details.first(8).last.choice == @answer.answer_details.first(8).last.question.choice ? "脳筋" : "正常"
+br
+
+table
+  tr
     th = '脳筋度'
-    td = "#{@judge_count.count('脳筋')} / 5"
+    td = "#{@judge_count.count('脳筋')} / 8"
+
+= link_to 'ユーザー登録して脳筋あるあるを投稿しよう', new_user_registration_path

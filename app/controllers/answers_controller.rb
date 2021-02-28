@@ -8,15 +8,15 @@ class AnswersController < ApplicationController
   def new
     @answer = Answer.new
     @answer.answer_details.build
-    @questions = Question.order("RAND()").limit(5)
+    @questions = Question.order("RAND()").limit(8)
   end
 
   def create
     @answer = Answer.create(answer_params)
     if @answer.save
-      redirect_to answer_path(@answer), notice: "成功"
+      redirect_to answer_path(@answer)
     else
-      flash.now[:alart] = "失敗"
+      flash.now[:alart] = "回答に失敗しました"
       render :new
     end
   end
@@ -27,6 +27,9 @@ class AnswersController < ApplicationController
                    (@answer.answer_details.third.choice == @answer.answer_details.third.question.choice ? "脳筋" : "正常"),
                    (@answer.answer_details.fourth.choice == @answer.answer_details.fourth.question.choice ? "脳筋" : "正常"),
                    (@answer.answer_details.fifth.choice == @answer.answer_details.fifth.question.choice ? "脳筋" : "正常")
+                   (@answer.answer_details.first(6).last == @answer.answer_details.first(6).last.question.choice ? "脳筋" : "正常")
+                   (@answer.answer_details.first(7).last == @answer.answer_details.first(7).last.question.choice ? "脳筋" : "正常")
+                   (@answer.answer_details.first(8).last == @answer.answer_details.first(8).last.question.choice ? "脳筋" : "正常")
   end
 
   def destroy
@@ -35,7 +38,6 @@ class AnswersController < ApplicationController
   end
 
   private
-
   def set_answer
     @answer = Answer.find(params[:id])
   end
@@ -46,7 +48,6 @@ class AnswersController < ApplicationController
                                   :choice,
                                   :answer_id,
                                   :question_id]
-    ).merge(user_id: current_user.id)
+    ).merge(user_signed_in? ? {user_id: current_user.id} : {user_id: 1})
   end
-
 end

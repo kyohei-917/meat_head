@@ -7,7 +7,10 @@ $(document).on('turbolinks:load', function() {
     $('#question-2').hide();
     $('#question-3').hide();
     $('#question-4').hide();
-    $('[name="commit"]:submit').hide();
+    $('#question-5').hide();
+    $('#question-6').hide();
+    $('#question-7').hide();
+    $('#answer-submit').hide();
   });
 
   // １問目YES選択→２問目へ
@@ -18,8 +21,8 @@ $(document).on('turbolinks:load', function() {
         $(this)
           .find('#droppable-yes-0')
           $('.choice-yes-0').prop('checked', true);
-          $('#question-0').fadeOut();
-          $('#question-1').fadeIn();
+          $('#question-0').hide();
+          $('#question-1').show();
       }
     });
   });
@@ -32,8 +35,8 @@ $(document).on('turbolinks:load', function() {
         $(this)
           .find('#droppable-no-0')
           $('.choice-no-0').prop('checked', true);
-          $('#question-0').fadeOut();
-          $('#question-1').fadeIn();
+          $('#question-0').hide();
+          $('#question-1').show();
       }
     });
   });
@@ -46,8 +49,8 @@ $(document).on('turbolinks:load', function() {
         $(this)
           .find('#droppable-yes-1')
           $('.choice-yes-1').prop('checked', true);
-          $('#question-1').fadeOut();
-          $('#question-2').fadeIn();
+          $('#question-1').hide();
+          $('#question-2').show();
       }
     });
   });
@@ -60,8 +63,8 @@ $(document).on('turbolinks:load', function() {
         $(this)
           .find('#droppable-no-1')
           $('.choice-no-1').prop('checked', true);
-          $('#question-1').fadeOut();
-          $('#question-2').fadeIn();
+          $('#question-1').hide();
+          $('#question-2').show();
       }
     });
   });
@@ -74,8 +77,8 @@ $(document).on('turbolinks:load', function() {
         $(this)
           .find('#droppable-yes-2')
           $('.choice-yes-2').prop('checked', true);
-          $('#question-2').fadeOut();
-          $('#question-3').fadeIn();
+          $('#question-2').hide();
+          $('#question-3').show();
       }
     });
   });
@@ -88,8 +91,8 @@ $(document).on('turbolinks:load', function() {
         $(this)
           .find('#droppable-no2')
           $('.choice-no-2').prop('checked', true);
-          $('#question-2').fadeOut();
-          $('#question-3').fadeIn();
+          $('#question-2').hide();
+          $('#question-3').show();
       }
     });
   });
@@ -102,8 +105,8 @@ $(document).on('turbolinks:load', function() {
         $(this)
           .find('#droppable-yes3')
           $('.choice-yes-3').prop('checked', true);
-          $('#question-3').fadeOut();
-          $('#question-4').fadeIn();
+          $('#question-3').hide();
+          $('#question-4').show();
       }
     });
   });
@@ -116,27 +119,27 @@ $(document).on('turbolinks:load', function() {
         $(this)
           .find('#droppable-no-3')
           $('.choice-no-3').prop('checked', true);
-          $('#question-3').fadeOut();
-          $('#question-4').fadeIn();
+          $('#question-3').hide();
+          $('#question-4').show();
       }
     });
   });
 
-  // 5問目YES選択→submitボタン表示
+  // 5問目YES選択→6問目へ
   $(function() {
     $( '#draggable-4' ).draggable();
     $( '#droppable-yes-4' ).droppable({
       drop: function(e,ui){
         $(this)
-          .find('#droppable-yes-4')
+          .find('#droppable-yes4')
           $('.choice-yes-4').prop('checked', true);
-          $('#question-4').fadeOut();
-          $('[name="commit"]:submit').fadeIn();
+          $('#question-4').hide();
+          $('#question-5').show();
       }
     });
   });
 
-  // 5問目NO選択→submitボタン表示
+  // 5問目NO選択→6問目へ
   $(function() {
     $( '#draggable-4' ).draggable();
     $( '#droppable-no-4' ).droppable({
@@ -144,8 +147,94 @@ $(document).on('turbolinks:load', function() {
         $(this)
           .find('#droppable-no-4')
           $('.choice-no-4').prop('checked', true);
-          $('#question-4').fadeOut();
-          $('[name="commit"]:submit').fadeIn();
+          $('#question-4').hide();
+          $('#question-5').show();
+      }
+    });
+  });
+
+  // 6問目YES選択→7問目へ
+  $(function() {
+    $( '#draggable-5' ).draggable();
+    $( '#droppable-yes-5' ).droppable({
+      drop: function(e,ui){
+        $(this)
+          .find('#droppable-yes5')
+          $('.choice-yes-5').prop('checked', true);
+          $('#question-5').hide();
+          $('#question-6').show();
+      }
+    });
+  });
+
+  // 6問目NO選択→7問目へ
+  $(function() {
+    $( '#draggable-5' ).draggable();
+    $( '#droppable-no-5' ).droppable({
+      drop: function(e,ui){
+        $(this)
+          .find('#droppable-no-5')
+          $('.choice-no-5').prop('checked', true);
+          $('#question-5').hide();
+          $('#question-6').show();
+      }
+    });
+  });
+
+  // 7問目YES選択→8問目へ
+  $(function() {
+    $( '#draggable-6' ).draggable();
+    $( '#droppable-yes-6' ).droppable({
+      drop: function(e,ui){
+        $(this)
+          .find('#droppable-yes6')
+          $('.choice-yes-6').prop('checked', true);
+          $('#question-6').hide();
+          $('#question-7').show();
+      }
+    });
+  });
+
+  // 7問目NO選択→8問目へ
+  $(function() {
+    $( '#draggable-6' ).draggable();
+    $( '#droppable-no-6' ).droppable({
+      drop: function(e,ui){
+        $(this)
+          .find('#droppable-no-6')
+          $('.choice-no-6').prop('checked', true);
+          $('#question-6').hide();
+          $('#question-7').show();
+      }
+    });
+  });
+
+
+
+  // 8問目YES選択→submitボタン表示
+  $(function() {
+    $( '#draggable-7' ).draggable();
+    $( '#droppable-yes-7' ).droppable({
+      drop: function(e,ui){
+        $(this)
+          .find('#droppable-yes-7')
+          $('.choice-yes-7').prop('checked', true);
+          $('#question-7').hide();
+          $('#answer-submit').show();
+      }
+    });
+  });
+
+  // 8問目NO選択→submitボタン表示
+  $(function() {
+    $( '#draggable-7' ).draggable();
+    $( '#droppable-no-7' ).droppable({
+      drop: function(e,ui){
+        $(this)
+          .find('#droppable-no-7')
+          $('.choice-no-7').prop('checked', true);
+          $('#question-7').hide();
+          $('answer-submit').show();
       }
     });
   });
