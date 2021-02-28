@@ -22,14 +22,19 @@ class AnswersController < ApplicationController
   end
 
   def show
+    # @answers = @answer.answer_details
+    # @answers.each do |answer|
+    #   answer.choice == answer.question.choice ? "脳筋" : "正常"
+    #   true.count
+    # end
     @judge_count = (@answer.answer_details.first.choice == @answer.answer_details.first.question.choice ? "脳筋" : "正常"),
                    (@answer.answer_details.second.choice == @answer.answer_details.second.question.choice ? "脳筋" : "正常"),
                    (@answer.answer_details.third.choice == @answer.answer_details.third.question.choice ? "脳筋" : "正常"),
                    (@answer.answer_details.fourth.choice == @answer.answer_details.fourth.question.choice ? "脳筋" : "正常"),
-                   (@answer.answer_details.fifth.choice == @answer.answer_details.fifth.question.choice ? "脳筋" : "正常")
-                   (@answer.answer_details.first(6).last == @answer.answer_details.first(6).last.question.choice ? "脳筋" : "正常")
-                   (@answer.answer_details.first(7).last == @answer.answer_details.first(7).last.question.choice ? "脳筋" : "正常")
-                   (@answer.answer_details.first(8).last == @answer.answer_details.first(8).last.question.choice ? "脳筋" : "正常")
+                   (@answer.answer_details.fifth.choice == @answer.answer_details.fifth.question.choice ? "脳筋" : "正常"),
+                   (@answer.answer_details.first(6).last.choice == @answer.answer_details.first(6).last.question.choice ? "脳筋" : "正常"),
+                   (@answer.answer_details.first(7).last.choice == @answer.answer_details.first(7).last.question.choice ? "脳筋" : "正常"),
+                   (@answer.answer_details.first(8).last.choice == @answer.answer_details.first(8).last.question.choice ? "脳筋" : "正常")
   end
 
   def destroy
