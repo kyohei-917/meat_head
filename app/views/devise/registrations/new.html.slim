@@ -19,10 +19,10 @@ h2
         |  characters minimum)
     br
     = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "new-password"
+  / .field
+  /   = f.label :password_confirmation
+  /   br
+  /   = f.password_field :password_confirmation, autocomplete: "new-password"
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"

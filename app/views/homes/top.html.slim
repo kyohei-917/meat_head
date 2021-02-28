@@ -1,0 +1,7 @@
+ul
+  / ゲストユーザー以外のオリジナルユーザーとしてログインしている場合、質問が作れる
+  - if current_user != User.guest && user_signed_in?
+    li = link_to '質問を作成する', new_question_path
+    li = link_to '診断する(ユーザー)', new_answer_path
+  - else
+    li = link_to '診断する(ゲスト)', new_answer_path
