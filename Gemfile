@@ -65,3 +65,6 @@ gem 'devise-i18n-views'
 
 # ログイン
 gem 'devise'
+
+# css
+gem 'semantic-ui-sass'
