@@ -9,26 +9,9 @@ html
     = stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/le-frog/jquery-ui.min.css'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     header
-      nav
-        - if current_user == User.guest
-          / strong= link_to current_user.username, pages_show_path
-          = link_to '新規ユーザー登録　', new_user_registration_path
-          = link_to '登録済ユーザーとしてログインする　', new_user_session_path
-          = link_to '登録情報を編集する　', edit_user_registration_path
-          = link_to 'ログアウトする　', destroy_user_session_path, method: :delete
-          = link_to 'トップページへ　', root_path
-        - elsif current_user == nil
-          = link_to '登録情報を編集する　', edit_user_registration_path
-          = link_to 'ログアウトする　', destroy_user_session_path, method: :delete
-          = link_to 'ユーザー登録　', new_user_registration_path
-          = link_to 'ログイン　', new_user_session_path
-          = link_to 'トップページへ　', root_path
-        - else
-          = link_to 'ログアウトする　', destroy_user_session_path, method: :delete
-          = link_to 'ユーザー登録　', new_user_registration_path
-          = link_to 'ログイン　', new_user_session_path
-          = link_to 'トップページへ　', root_path
-        - flash.each do |key, value|
-          p class=("alert alert-#{key}")
-            = value
+      - if current_user != User.guest && user_signed_in?
+        = render 'shared/login_headder'
+      - else
+        = render 'shared/before_login_headder'
+
     = yield
