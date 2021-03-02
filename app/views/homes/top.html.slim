@@ -1,7 +1,23 @@
-ul
-  / ゲストユーザー以外のオリジナルユーザーとしてログインしている場合、質問が作れる
+.all
+
+  .ui.text.container
+    h1 脳筋チェッカー
+    h2 アナタのノウミソはダイジョブですか？
+
+  #kinniku
+    = image_tag 'kinniku.jpg', class: 'kinniku'
+
   - if current_user != User.guest && user_signed_in?
-    li = link_to '質問を作成する', new_question_path
-    li = link_to '診断する(ユーザー)', new_answer_path
+    = render 'login_answer_form'
   - else
-    li = link_to '診断する(ゲスト)', new_answer_path
+    = render 'not_login_answer_form'
+
+
+    / .ui.large.buttons
+    / = link_to '診断する', new_answer_path, class: 'ui button'
+    / .or
+    / = link_to '質問を作成する', new_question_path, class: 'ui button'
+  / .ui.bottom.attached.button tabindex="0"  Bottom
+
+
+  / if current_user != guest && user_signed_in?
