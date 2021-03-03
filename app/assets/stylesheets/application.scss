@@ -1,1 +1,21 @@
 @import "semantic-ui";
+@import "homes";
+@import "answers";
+@import "questions";
+
+@font-face {
+  font-family: 'gagagaga';
+  src: font-url('/assets/gagagaga.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.all {
+  background-image: url("back-ground.png");
+  background-size: cover;
+}
+
+/* ヘッダーメニュー */
+.ui.grey.inverted.menu {
+  opacity: 0.7;
+}
