@@ -9,9 +9,6 @@ html
     = stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/le-frog/jquery-ui.min.css'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     header
-      - if current_user != User.guest && user_signed_in?
-        = render 'shared/login_headder'
-      - else
-        = render 'shared/before_login_headder'
-
+  body
+    = render "shared/flash_message"
     = yield
