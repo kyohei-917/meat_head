@@ -1,12 +1,17 @@
 = form_with model: question do |f|
   / = render 'shared/error_messages', object: f.object
-  .form-group
-    = f.label :text
-    = f.text_field :text
-  p = "質問内容に対して脳筋にあたる選択肢を以下でチョイスする"
-  .form-group
-    = f.label "YES"
-    = f.radio_button :choice, :yes
-    = f.label "NO"
-    = f.radio_button :choice, :no
-  = f.submit class: 'ui stndard button'
+  .ui.big.form
+    / = f.label :text
+    = f.text_field :text, class: 'question-form'
+  .ui.big.form
+    .ui.text.container
+      br
+      h3 こっちセンタクしたヤツはノウキン！！
+    .question-choice-wrapper
+      = f.label "YES"
+      = f.radio_button :choice, :yes, class: 'ui radio checkbox'
+      = f.label "NO"
+      = f.radio_button :choice, :no, class: 'ui radio checkbox'
+  .question-button-wrapper
+    br
+    = f.submit 'テイキョウ', class: 'fluid ui standard question button'
