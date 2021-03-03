@@ -1,21 +1,35 @@
-br
-br
-= form_with model: [@answer], method: :post do |f|
-  - @questions.each_with_index do |question, index|
-    .question-wrapper*{id: "question-#{index}"}
-      - unless user_signed_in?
-        = f.hidden_field :user_id, value: user_id = 1
-      = f.label question.text, id: "draggable-#{index}"
-      = f.fields_for :answer_details do |d|
-        = d.hidden_field :answer_id, value: @answer.id
-        = d.hidden_field :question_id, value: question.id
-        = d.label 'YES', style: 'display: none'
-        = d.radio_button :choice, :yes, class: "choice-yes-#{index}", style: 'display: none'
-        = d.label 'NO', style: 'display: none'
-        = d.radio_button :choice, :no, class: "choice-no-#{index}", style: 'display: none'
-        br
-        .ui-widget-content*{id: "droppable-yes-#{index}"}
-          p Y E S
-        .ui-widget-content*{id: "droppable-no-#{index}"}
-          p N O
-  = f.submit '診断結果を確認', id: 'answer-submit'
+.all
+  header
+    = render 'shared/headder'
+
+  .ui.text.container
+    h1 ノウキンチェッカー
+    h2 アナタのノウミソはダイジョブですか？
+
+  = form_with model: [@answer], method: :post do |f|
+    - @questions.each_with_index do |question, index|
+      .question-wrapper*{id: "question-#{index}"}
+        - unless user_signed_in?
+          = f.hidden_field :user_id, value: user_id = 1
+        .question-text-wrapper
+          = f.label question.text, id: "draggable-#{index}", class: 'question-text'
+        = f.fields_for :answer_details do |d|
+          = d.hidden_field :answer_id, value: @answer.id
+          = d.hidden_field :question_id, value: question.id
+          = d.label 'YES', style: 'display: none'
+          = d.radio_button :choice, :yes, class: "choice-yes-#{index}", style: 'display: none'
+          = d.label 'NO', style: 'display: none'
+          = d.radio_button :choice, :no, class: "choice-no-#{index}", style: 'display: none'
+          .ui.placeholder.segment
+            .ui.two.column.very.relaxed.stackable.grid
+              .column.*{id: "droppable-yes-#{index}"}
+                .field
+                  h2.ui.header
+                    p Y E S
+              .middle.aligned.column.*{id: "droppable-no-#{index}"}
+                .field
+                  h2.ui.header
+                    p N O
+            .ui.vertical.divider Or
+    .answer-submit-button-wrapper
+      = f.submit '診断結果を確認', id: 'answer-submit'
