@@ -1,0 +1,20 @@
+.all
+  = render 'shared/headder'
+  .ui.text.container
+    h1 ノウキンチェッカー
+    h2 アナタのノウキン度は、、、
+    br
+    h1 ３０%
+    .thisis-wrapper
+      = image_tag 'thisis.jpg', class: 'thisis-img'
+    h3 ディスイズ、サイコーにチョードイィ距離感!！
+      <br>程良い距離感でキンニクと付き合えているようですね。
+      <br>しかしこの結果に油断してはなりません。
+      <br>ノウキンはいつでもアナタの
+      <br>ココロのスキマを狙っていることでしょう。
+      <br>慢心せずに、時々ここに戻ってくることをオススメします。
+    br
+  - if current_user != User.guest && user_signed_in?
+    = render 'login_menu'
+  - else
+    = render 'before_login_menu'

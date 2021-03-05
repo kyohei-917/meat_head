@@ -1,0 +1,20 @@
+.all
+  = render 'shared/headder'
+  .ui.text.container
+    h1 ノウキンチェッカー
+    h2 アナタのノウキン度は、、、
+    br
+    h1 ５０%
+    .bread-wrapper
+      = image_tag 'bread.jpg', class: 'bread-img'
+    h3 アナタのノウミソはフランスパン並の硬さです。
+      <br>かなり硬くなってきているようですね。
+      <br>アナタには潜在的なノウキン素質があるかもしれません。
+      <br>たまにはキンニクのことは忘れて
+      <br>友達を誘いスイーツパラダイスに行ってみましょう。
+      <br>その背徳感がアナタを成長させることでしょう。
+    br
+  - if current_user != User.guest && user_signed_in?
+    = render 'login_menu'
+  - else
+    = render 'before_login_menu'
