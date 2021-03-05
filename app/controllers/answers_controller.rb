@@ -14,7 +14,25 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.create(answer_params)
     if @answer.save
-      redirect_to answer_path(@answer)
+      @judge_count = (@answer.answer_details.first.choice == @answer.answer_details.first.question.choice ? "脳筋" : "正常"),
+                    (@answer.answer_details.second.choice == @answer.answer_details.second.question.choice ? "脳筋" : "正常"),
+                    (@answer.answer_details.third.choice == @answer.answer_details.third.question.choice ? "脳筋" : "正常"),
+                    (@answer.answer_details.fourth.choice == @answer.answer_details.fourth.question.choice ? "脳筋" : "正常"),
+                    (@answer.answer_details.fifth.choice == @answer.answer_details.fifth.question.choice ? "脳筋" : "正常"),
+                    (@answer.answer_details.first(6).last.choice == @answer.answer_details.first(6).last.question.choice ? "脳筋" : "正常"),
+                    (@answer.answer_details.first(7).last.choice == @answer.answer_details.first(7).last.question.choice ? "脳筋" : "正常"),
+                    (@answer.answer_details.first(8).last.choice == @answer.answer_details.first(8).last.question.choice ? "脳筋" : "正常")
+      if @judge_count.count('脳筋') >= 8
+        redirect_to answers_result100_path
+      elsif @judge_count.count('脳筋') >= 6 && @judge_count.count('脳筋') <= 7
+        redirect_to answers_result70_path
+      elsif @judge_count.count('脳筋') >= 4 && @judge_count.count('脳筋') <= 5
+        redirect_to answers_result50_path
+      elsif @judge_count.count('脳筋') >= 2 && @judge_count.count('脳筋') <= 3
+        redirect_to answers_result30_path
+      else
+        redirect_to answers_result0_path
+      end
     else
       flash.now[:alart] = "回答に失敗しました"
       render :new
@@ -22,19 +40,20 @@ class AnswersController < ApplicationController
   end
 
   def show
-    # @answers = @answer.answer_details
-    # @answers.each do |answer|
-    #   answer.choice == answer.question.choice ? "脳筋" : "正常"
-    #   true.count
-    # end
     @judge_count = (@answer.answer_details.first.choice == @answer.answer_details.first.question.choice ? "脳筋" : "正常"),
-                   (@answer.answer_details.second.choice == @answer.answer_details.second.question.choice ? "脳筋" : "正常"),
-                   (@answer.answer_details.third.choice == @answer.answer_details.third.question.choice ? "脳筋" : "正常"),
-                   (@answer.answer_details.fourth.choice == @answer.answer_details.fourth.question.choice ? "脳筋" : "正常"),
-                   (@answer.answer_details.fifth.choice == @answer.answer_details.fifth.question.choice ? "脳筋" : "正常"),
-                   (@answer.answer_details.first(6).last.choice == @answer.answer_details.first(6).last.question.choice ? "脳筋" : "正常"),
-                   (@answer.answer_details.first(7).last.choice == @answer.answer_details.first(7).last.question.choice ? "脳筋" : "正常"),
-                   (@answer.answer_details.first(8).last.choice == @answer.answer_details.first(8).last.question.choice ? "脳筋" : "正常")
+                  (@answer.answer_details.second.choice == @answer.answer_details.second.question.choice ? "脳筋" : "正常"),
+                  (@answer.answer_details.third.choice == @answer.answer_details.third.question.choice ? "脳筋" : "正常"),
+                  (@answer.answer_details.fourth.choice == @answer.answer_details.fourth.question.choice ? "脳筋" : "正常"),
+                  (@answer.answer_details.fifth.choice == @answer.answer_details.fifth.question.choice ? "脳筋" : "正常"),
+                  (@answer.answer_details.first(6).last.choice == @answer.answer_details.first(6).last.question.choice ? "脳筋" : "正常"),
+                  (@answer.answer_details.first(7).last.choice == @answer.answer_details.first(7).last.question.choice ? "脳筋" : "正常"),
+                  (@answer.answer_details.first(8).last.choice == @answer.answer_details.first(8).last.question.choice ? "脳筋" : "正常")
+# redirect_to answer_path(@answer)
+    # if @judge_count.count('脳筋') < 8
+    #   redirect_to answer_path(@answer)
+    # else
+    #   redirect_to root_path
+    # end
   end
 
   def destroy
