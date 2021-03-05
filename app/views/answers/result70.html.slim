@@ -1,0 +1,22 @@
+.all
+  = render 'shared/headder'
+  .ui.text.container
+    h1 ノウキンチェッカー
+    h2 アナタのノウキン度は、、、
+    br
+    br
+    h1 ７０%
+    .china-wrapper
+        = image_tag 'china.jpg', class: 'china-img'
+    h3 これはマズイです。 ちゃいなマーブル 並の硬さですよ。
+      <br>すいません、例えがわかりにくいですね、、
+      <br>悪いことは言いません、引き返すならイマです。
+      <br>イマならまだ間に合うかもしれません。
+      <br>しばらくキンニクと距離を置きサウナで整いましょう。
+      <br>サウナに行く際はくれぐれも
+      <br>シャワー室の鏡に向かってのポージングはしないように。
+    br
+  - if current_user != User.guest && user_signed_in?
+    = render 'login_menu'
+  - else
+    = render 'before_login_menu'

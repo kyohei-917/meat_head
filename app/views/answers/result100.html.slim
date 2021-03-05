@@ -1,0 +1,22 @@
+.all
+  = render 'shared/headder'
+  .ui.text.container
+    h1 ノウキンチェッカー
+    h2 アナタのノウキン度は、、、
+    br
+    br
+    h1 １００%
+    .yamagishi-wrapper
+      = image_tag 'yamagishi.jpg', class: 'yamagishi-img'
+    h3 アナタのノウミソはセラミック並にカチカチです。
+      <br>これにはレジェンド山岸プロもびっくりです。
+      <br>アナタのジンセイはキンニクと引き換えにたくさんの
+      <br>ギセイのもとに成り立っているといえるでしょう。
+      <br>アナタがこれまで食べずに捨ててきた
+      <br>数えきれないトリムネの皮の事は忘れてはなりません。
+      <br>ジュウジカを背負って生きてください。
+    br
+  - if current_user != User.guest && user_signed_in?
+    = render 'login_menu'
+  - else
+    = render 'before_login_menu'

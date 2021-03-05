@@ -14,5 +14,6 @@ global.$ = require("jquery")
 require("jquery")
 require("jquery-ui")
 
+require("packs/flash_message")
 require("./answer/new")
 

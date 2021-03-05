@@ -1,3 +1,101 @@
-// Place all the styles related to the answers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.ui.placeholder.segment {
+  height: 500px;
+}
+
+.column {
+  height: 500px;
+}
+
+.field > h2 {
+  text-align: center;
+}
+
+.question-text-wrapper {
+  text-align: center;
+}
+
+.question-text {
+  z-index: 1;
+}
+
+#answer-submit {
+  margin-top: 100px;
+  z-index: 2;
+}
+
+.answer-submit-button-wrapper {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+// 診断結果画面下部メニューボタン
+.result-menu-wrapper {
+  margin-top: 10px;
+  text-align: center;
+  padding-bottom: 150px;
+}
+
+// 診断結果100山岸プロ画像
+
+.yamagishi-wrapper {
+  text-align: center;
+}
+
+.yamagishi-img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+// 診断結果70ちゃいなマーブル画像
+
+.china-wrapper {
+  text-align: center;
+}
+
+.china-img {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+// 診断結果50フランスパン画像
+
+.bread-wrapper {
+  text-align: center;
+}
+
+.bread-img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+// 診断結果30フリード画像
+
+.thisis-wrapper {
+  text-align: center;
+}
+
+.thisis-img {
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+// 診断結果0悟り画像
+
+.satori-wrapper {
+  text-align: center;
+}
+
+.satori-img {
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8;
+}

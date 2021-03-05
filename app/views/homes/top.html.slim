@@ -1,7 +1,7 @@
 .all
-
+  = render 'shared/headder'
   .ui.text.container
-    h1 脳筋チェッカー
+    h1 ノウキンチェッカー
     h2 アナタのノウミソはダイジョブですか？
 
   #kinniku
@@ -10,14 +10,4 @@
   - if current_user != User.guest && user_signed_in?
     = render 'login_answer_form'
   - else
-    = render 'not_login_answer_form'
-
-
-    / .ui.large.buttons
-    / = link_to '診断する', new_answer_path, class: 'ui button'
-    / .or
-    / = link_to '質問を作成する', new_question_path, class: 'ui button'
-  / .ui.bottom.attached.button tabindex="0"  Bottom
-
-
-  / if current_user != guest && user_signed_in?
+    = render 'before_login_answer_form'

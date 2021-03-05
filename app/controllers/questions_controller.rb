@@ -14,8 +14,9 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.user_id = current_user.id
     if @question.save
-      redirect_to questions_path
+      redirect_to root_path, success: '投稿ありがとうございます！'
     else
+      flash[:danger] = '投稿に失敗しました。'
       render :new
     end
   end

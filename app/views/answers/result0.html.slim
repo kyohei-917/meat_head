@@ -1,0 +1,21 @@
+.all
+  = render 'shared/headder'
+  .ui.text.container
+    h1 ノウキンチェッカー
+    h2 アナタのノウキン度は、、、
+    br
+    h1 ０%
+    .bread-wrapper
+      = image_tag 'satori.jpg', class: 'satori-img'
+    h3 よくぞこのページに辿り着きましたね。
+      <br>この結果にはネテロ会長もびっくりでしょう!!
+      <br>サトリの境地に達しているようですね。
+      <br>しかし、運動不足にはには気をつけましょう。
+      <br>コロナでリモートワークが増えている時代だからこそ
+      <br>日々の適度なウンドウをオススメします。
+      <br>心当たりのある方はエニタイムフィットネスへ入会しましょう。
+    br
+  - if current_user != User.guest && user_signed_in?
+    = render 'login_menu'
+  - else
+    = render 'before_login_menu'

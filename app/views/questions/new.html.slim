@@ -1,4 +1,8 @@
-h1 質問を新規作成する
-h3 管理者または登録ユーザーはここで質問を作成することができる
-
-= render 'form', question: @question
+.all
+  = render 'shared/headder'
+  .ui.text.container
+    h1 ノウキンチェッカー
+    / h2 アナタのノウミソはダイジョブですか？
+    br
+    h3 アナタのノウキンエピソードをテイキョウしてください
+    = render 'form', question: @question
