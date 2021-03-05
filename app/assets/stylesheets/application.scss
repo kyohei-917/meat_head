@@ -3,6 +3,7 @@
 @import "answers";
 @import "questions";
 
+/* フォント */
 @font-face {
   font-family: 'gagagaga';
   src: font-url('/assets/gagagaga.otf');
@@ -10,6 +11,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'corporate';
+  src: font-url('/assets/corporatex-min.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 背景 */
 .all {
   background-image: url("back-ground.png");
   background-size: cover;
