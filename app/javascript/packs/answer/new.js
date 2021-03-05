@@ -11,6 +11,7 @@ $(document).on('turbolinks:load', function() {
     $('#question-6').hide();
     $('#question-7').hide();
     $('#answer-submit').hide();
+    $('.aiueo').hide();
   });
 
   // １問目YES選択→２問目へ
@@ -220,6 +221,7 @@ $(document).on('turbolinks:load', function() {
           .find('#droppable-yes-7')
           $('.choice-yes-7').prop('checked', true);
           $('#question-7').hide();
+          $('.aiueo').show();
           $('#answer-submit').show();
       }
     });
@@ -234,7 +236,8 @@ $(document).on('turbolinks:load', function() {
           .find('#droppable-no-7')
           $('.choice-no-7').prop('checked', true);
           $('#question-7').hide();
-          $('answer-submit').show();
+          $('.aiueo').show();
+          $('#answer-submit').show();
       }
     });
   });

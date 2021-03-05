@@ -9,8 +9,6 @@
       .question-wrapper*{id: "question-#{index}"}
         - unless user_signed_in?
           = f.hidden_field :user_id, value: user_id = 1
-        .question-text-wrapper
-          = f.label question.text, id: "draggable-#{index}", class: 'question-text'
         = f.fields_for :answer_details do |d|
           = d.hidden_field :answer_id, value: @answer.id
           = d.hidden_field :question_id, value: question.id
@@ -28,6 +26,12 @@
                 .field
                   h2.ui.header
                     p N O
-            .ui.vertical.divider Or
+            .ui.vertical.divider
+              .draggable-wrapper*{id: "draggable-#{index}"}
+                = f.label question.text, class: 'question-text'
+
+    .ui.before.result.container
+      h2.aiueo アナタの結果は、、、、
     .answer-submit-button-wrapper
-      = f.submit '診断結果を確認', id: 'answer-submit'
+      = f.submit '確認する', id: 'answer-submit', class: 'fluid ui button'
+

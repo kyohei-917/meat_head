@@ -2,11 +2,11 @@
   .ui.grey.inverted.menu
     = link_to 'ホーム', root_path, class: 'item'
     .right.menu
-      = link_to '登録情報を編集する', edit_user_registration_path, class: 'ui item'
-      = link_to 'ログアウトする', destroy_user_session_path, method: :delete, class: 'ui item'
+      = link_to 'ユーザー編集', edit_user_registration_path, class: 'ui item'
+      = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'ui item'
 - else
   .ui.grey.inverted.menu
     = link_to 'ホーム', root_path, class: 'item'
     .right.menu
-      = link_to 'ログインする', new_user_session_path, class: 'ui item'
-      = link_to 'ユーザートウロク', new_user_registration_path, class: 'ui item'
+      = link_to 'ログイン', new_user_session_path, class: 'ui item'
+      = link_to 'ユーザー登録', new_user_registration_path, class: 'ui item'
