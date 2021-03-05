@@ -1,3 +1,4 @@
+// YES NO エリア
 .ui.placeholder.segment {
   height: 500px;
 }
@@ -10,14 +11,29 @@
   text-align: center;
 }
 
-.question-text-wrapper {
-  text-align: center;
-}
-
+// 質問文
 .question-text {
   z-index: 1;
+  font-family: 'corporate';
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: normal;
 }
 
+// 質問文丸い玉
+.draggable-wrapper {
+  width: 230px;
+  height: 230px;
+  background-color: rgb(177,174,177);
+  border-radius: 50%;
+  margin: 0 auto;
+  line-height: 30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+// 回答ボタン周り
 #answer-submit {
   margin-top: 100px;
   z-index: 2;
@@ -25,17 +41,11 @@
 
 .answer-submit-button-wrapper {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 180px;
 }
 
-// 診断結果画面下部メニューボタン
-.result-menu-wrapper {
-  margin-top: 10px;
-  text-align: center;
-  padding-bottom: 150px;
-}
-
-// 診断結果100山岸プロ画像
+// 診断結果毎の画像
+  // 100山岸プロ
 
 .yamagishi-wrapper {
   text-align: center;
@@ -48,7 +58,7 @@
   opacity: 0.8;
 }
 
-// 診断結果70ちゃいなマーブル画像
+  // 70ちゃいなマーブル
 
 .china-wrapper {
   text-align: center;
@@ -61,7 +71,7 @@
   opacity: 0.8;
 }
 
-// 診断結果50フランスパン画像
+  // 50フランスパン
 
 .bread-wrapper {
   text-align: center;
@@ -74,7 +84,7 @@
   opacity: 0.8;
 }
 
-// 診断結果30フリード画像
+  // 30フリード
 
 .thisis-wrapper {
   text-align: center;
@@ -87,7 +97,7 @@
   opacity: 0.8;
 }
 
-// 診断結果0悟り画像
+  // 0悟り
 
 .satori-wrapper {
   text-align: center;
@@ -98,4 +108,17 @@
   max-width: 100%;
   height: auto;
   opacity: 0.8;
+}
+
+// アナタの結果は、、、
+.ui.before.result.container {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+// 診断結果画面下部メニューボタン
+.result-menu-wrapper {
+  margin-top: 10px;
+  text-align: center;
+  padding-bottom: 150px;
 }
