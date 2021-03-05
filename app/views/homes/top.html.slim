@@ -1,15 +1,13 @@
 .all
-  header
-    = render 'shared/headder'
+  = render 'shared/headder'
+  .ui.text.container
+    h1 ノウキンチェッカー
+    h2 アナタのノウミソはダイジョブですか？
 
-    .ui.text.container
-      h1 ノウキンチェッカー
-      h2 アナタのノウミソはダイジョブですか？
+  #kinniku
+    = image_tag 'kinniku.jpg', class: 'kinniku'
 
-    #kinniku
-      = image_tag 'kinniku.jpg', class: 'kinniku'
-
-    - if current_user != User.guest && user_signed_in?
-      = render 'login_answer_form'
-    - else
-      = render 'before_login_answer_form'
+  - if current_user != User.guest && user_signed_in?
+    = render 'login_answer_form'
+  - else
+    = render 'before_login_answer_form'
