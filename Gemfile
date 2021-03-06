@@ -65,6 +65,6 @@ gem 'devise-i18n-views'
 
 # ログイン
 gem 'devise'
-
+gem 'omniauth-twitter'
 # css
 gem 'semantic-ui-sass'
