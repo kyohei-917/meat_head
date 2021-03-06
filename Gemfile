@@ -64,7 +64,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 # ログイン
-gem 'devise'
+gem 'devise', git: 'https://github.com/heartcombo/devise'
 gem 'omniauth-twitter'
 # css
 gem 'semantic-ui-sass'
