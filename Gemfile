@@ -66,6 +66,8 @@ gem 'devise-i18n-views'
 # ログイン
 gem 'devise', git: 'https://github.com/heartcombo/devise'
 gem 'omniauth-twitter'
+# csrf対策
+gem "omniauth-rails_csrf_protection"
 
 # css
 gem 'semantic-ui-sass'
