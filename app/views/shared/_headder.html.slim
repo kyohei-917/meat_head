@@ -2,7 +2,7 @@
   .ui.grey.inverted.menu
     = link_to 'ホーム', root_path, class: 'item'
     .right.menu
-      = link_to 'ユーザー編集', edit_user_registration_path, class: 'ui item'
+      = link_to "#{current_user.name}", edit_user_registration_path, class: 'ui item'
       = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'ui item'
 - else
   .ui.grey.inverted.menu

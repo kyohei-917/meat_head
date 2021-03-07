@@ -272,6 +272,10 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_SECRET_KEY'], scope: 'email', oauth_callback: "#{ENV['HOST']}/users/auth/twitter/callback"
+  OmniAuth.config.logger = Rails.logger if Rails.env.development? # debug用
+  # config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_SECRET_KEY']
+  # OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

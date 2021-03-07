@@ -1,6 +1,6 @@
 .result-menu-wrapper
   .ui.large.buttons
-    = link_to root_path, class: 'ui twitter button' do
+    = link_to "https://twitter.com/share?url=#{ request.url }/&text=私の脳筋度は#{ }%でした。", target: '_blank' , class: 'ui twitter button' do
       i.twitter.icon
       | 結果をTwitterでシェア
     .or
