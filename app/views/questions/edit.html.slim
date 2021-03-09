@@ -1,4 +1,9 @@
-h1 質問を編集する
-h3 管理者または登録ユーザーはここで自分の作った質問を編集することができる
+.all
+  = render 'shared/headder'
+  .ui.text.container.margin-wrapper
+    h2 脳筋エピソードを編集する
 
-= render 'form', question: @question
+  = render 'form', question: @question
+  .question-form-wrapper
+    .question-button-wrapper
+      = link_to '削除', question_path, method: :delete, data: { confirm: "削除しますか？" }, class: 'fluid ui negative question button'

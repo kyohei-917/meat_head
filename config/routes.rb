@@ -18,9 +18,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
 
-  resources :users do
-    resources :qiestions
-  end
+  resources :users
   resources :questions
   resources :answers do
     resources :answer_details
