@@ -1,6 +1,9 @@
 // YES NO エリア
 .ui.placeholder.segment {
   height: 500px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .column {
@@ -40,8 +43,11 @@
 }
 
 .answer-submit-button-wrapper {
-  text-align: center;
+  // text-align: center;
   padding-bottom: 180px;
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // 診断結果毎の画像
