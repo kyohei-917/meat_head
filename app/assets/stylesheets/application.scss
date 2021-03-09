@@ -2,6 +2,7 @@
 @import "homes";
 @import "answers";
 @import "questions";
+@import "devises";
 
 /* フォント */
 @font-face {
@@ -22,9 +23,13 @@
 .all {
   background-image: url("back-ground.png");
   background-size: cover;
+  min-height: 100vh;
 }
 
 /* ヘッダーメニュー */
 .ui.grey.inverted.menu {
-  opacity: 0.5;
+  // opacity: 0.8;
+  // max-width: 80%;
+  // margin-left: auto;
+  // margin-right: auto;
 }

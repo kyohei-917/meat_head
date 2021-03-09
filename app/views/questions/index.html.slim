@@ -1,24 +1,14 @@
-h2 質問一覧
-
-table
-  tr
-    th = 'ID'
-    th = 'ユーザーID'
-    th = '質問内容'
-    th = '脳筋選択肢'
-    th
-  - @questions.each do |question|
-    tr
-      td = link_to question.id, question
-      td = question.user_id
-      td = question.text
-      td = question.choice
-      td
-        = link_to '編集', edit_question_path(question)
-      td
-        = link_to '削除', question, method: :delete, data: { confirm: "削除しますか？" }
-
-  ul type="square"
-    li = link_to '質問作成', new_question_path
-    li = link_to '回答', new_answer_path
-
+.all
+  = render 'shared/headder'
+  .ui.text.container
+    h2 テイキョウしたノウキン.エピソードたち
+  table.ui.celled.grey.table
+    thead
+      tr
+        th = '脳筋エピソード'
+        th = 'チョイス'
+    tbody
+    - current_user.questions.each do |question|
+      tr
+        td = link_to "#{question.text}", edit_question_path(question)
+        td = question.choice

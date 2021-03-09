@@ -1,17 +1,18 @@
-= form_with model: question do |f|
-  / = render 'shared/error_messages', object: f.object
-  .ui.big.form
-    / = f.label :text
-    = f.text_field :text, class: 'question-form'
-  .ui.big.form
-    .ui.text.container
+.question-form-wrapper
+  = form_with model: question, local: true do |f|
+    = render 'shared/error_messages', object: f.object
+    .ui.big.form
+      = f.text_field :text, class: 'question-form'
+    .ui.big.form
+      .ui.container
+        br
+        h3 こっちセンタクしたヤツはノウキン！！
+      .question-choice-wrapper
+        = f.label "YES"
+        = f.radio_button :choice, :yes, class: 'ui radio checkbox'
+        = f.label "NO"
+        = f.radio_button :choice, :no, class: 'ui radio checkbox'
+    .question-button-wrapper
       br
-      h3 こっちセンタクしたヤツはノウキン！！
-    .question-choice-wrapper
-      = f.label "YES"
-      = f.radio_button :choice, :yes, class: 'ui radio checkbox'
-      = f.label "NO"
-      = f.radio_button :choice, :no, class: 'ui radio checkbox'
-  .question-button-wrapper
-    br
-    = f.submit 'テイキョウ', class: 'fluid ui standard question button'
+      = f.submit '提供', class: 'fluid ui positive question button'
+

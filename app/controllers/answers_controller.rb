@@ -48,12 +48,6 @@ class AnswersController < ApplicationController
                   (@answer.answer_details.first(6).last.choice == @answer.answer_details.first(6).last.question.choice ? "脳筋" : "正常"),
                   (@answer.answer_details.first(7).last.choice == @answer.answer_details.first(7).last.question.choice ? "脳筋" : "正常"),
                   (@answer.answer_details.first(8).last.choice == @answer.answer_details.first(8).last.question.choice ? "脳筋" : "正常")
-# redirect_to answer_path(@answer)
-    # if @judge_count.count('脳筋') < 8
-    #   redirect_to answer_path(@answer)
-    # else
-    #   redirect_to root_path
-    # end
   end
 
   def destroy

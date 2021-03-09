@@ -3,7 +3,8 @@ class QuestionsController < ApplicationController
   before_action :guest_user_valid, only: %i[new create edit update destroy]
 
   def index
-    @questions = Question.all
+    # @questions = Question.all
+    @questions = current_user.questions
   end
 
   def new
@@ -14,9 +15,9 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.user_id = current_user.id
     if @question.save
-      redirect_to root_path, success: '投稿ありがとうございます！'
+      redirect_to questions_path, success: 'テイキョウありがとうございます！'
     else
-      flash[:danger] = '投稿に失敗しました。'
+      flash[:danger] = 'テイキョウに失敗しました。'
       render :new
     end
   end
@@ -27,8 +28,9 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to question_path(@question)
+      redirect_to questions_path, success: '更新しました！'
     else
+      flash[:danger] = '更新に失敗しました'
       render :edit
     end
   end

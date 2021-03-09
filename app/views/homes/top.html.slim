@@ -6,6 +6,8 @@
 
   #kinniku
     = image_tag 'kinniku.jpg', class: 'kinniku'
+    / = image_tag 'kinniku2.jpg', class: 'kinniku'
+
 
   - if current_user != User.guest && user_signed_in?
     = render 'login_answer_form'
