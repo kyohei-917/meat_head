@@ -1,0 +1,7 @@
+.error-messages-wrapper
+  - if object.errors.any?
+    #error_messages.alert.alert-danger
+      - if object.errors
+        ul
+          - object.errors.full_messages.each do |message|
+            li= message
