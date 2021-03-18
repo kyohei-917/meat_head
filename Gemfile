@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rails_best_practices', require: false
   gem 'slim_lint', require: false
   gem 'scss_lint', require: false
+  # テスト
+  gem 'rspec-rails'
 
 end
 
