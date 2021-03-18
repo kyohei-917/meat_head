@@ -26,4 +26,5 @@
             = link_to omniauth_authorize_path(resource_name, provider), method: :post do
               button.fluid.ui.twitter.button
                 i.twitter.icon
-                | #{OmniAuth::Utils.camelize(provider)}ログイン
+                | ログイン
+                / | #{OmniAuth::Utils.camelize(provider)}ログイン

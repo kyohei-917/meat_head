@@ -1,33 +1,57 @@
+// 第一引数で基準となる画面幅のフォントサイズ、第二引数で基準となる画面幅を入力
+@function get_vw($size, $viewport:320){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10){
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+
+// p{
+//   @include fz_vw(13);
+// }
+
 .ui.container > h1 {
+  max-width: 100%;
   font-family: 'gagagaga';
-  font-size: 5em;
+  // font-size: 5rem;
+  @include fz_vw(20);
   text-align: center;
   font-weight: normal;
 }
 
 .ui.container > h2 {
   font-family: 'gagagaga';
-  font-size: 2.2em;
+  max-width: 100%;
+  white-space: nowrap;
+  // font-size: 2.2rem;
+  @include fz_vw(11);
   text-align: center;
   font-weight: normal;
 }
 
 .ui.container > h3 {
   font-family: 'gagagaga';
-  font-size: 1.5em;
+  // font-size: 1.5em;
+  max-width: 100%;
+  @include fz_vw(6);
+  // font-size: 1rem;
   text-align: center;
   font-weight: normal;
 }
 
 #kinniku {
   text-align: center;
+  margin-top: 30px;
 }
 
 #kinniku img {
-  width: 800px;
-  max-width: 100%;
+  // width: 800px;
+  max-width: 70%;
   max-height: 70%;
-  height: 580px;
+  // height: 580px;
   object-fit: cover;
   opacity: 0.9;
 }
@@ -36,7 +60,3 @@
   margin-top: 10px;
   text-align: center;
 }
-
-// .all{
-//   background-color: rgba(56, 119, 190, 0.692);
-// }

@@ -1,7 +1,7 @@
 .all
   = render 'shared/headder'
   .ui.text.container.margin-wrapper
-    h2 登録してエピソードをテイキョウしよう!!
+    h2 登録してエピソードをテイキョウ!!
   .devise-form-wrapper
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
@@ -23,4 +23,5 @@
             = link_to omniauth_authorize_path(resource_name, provider), method: :post do
               button.fluid.ui.twitter.button
                 i.twitter.icon
-                | #{OmniAuth::Utils.camelize(provider)}ログイン
+                | ログイン
+                / | #{OmniAuth::Utils.camelize(provider)}ログイン

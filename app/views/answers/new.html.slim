@@ -21,11 +21,13 @@
               .column.*{id: "droppable-yes-#{index}"}
                 .field
                   h2.ui.header
-                    p Y E S
+                    / p Y E S
+                    p YES
               .middle.aligned.column.*{id: "droppable-no-#{index}"}
                 .field
                   h2.ui.header
-                    p N O
+                    / p N O
+                    p NO
             .ui.vertical.divider
               .draggable-wrapper*{id: "draggable-#{index}"}
                 = f.label question.text, class: 'question-text'
