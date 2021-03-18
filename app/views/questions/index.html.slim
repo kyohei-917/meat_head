@@ -1,14 +1,14 @@
 .all
   = render 'shared/headder'
   .ui.text.container
-    h2 テイキョウしたノウキン.エピソードたち
+    h2 ノウキン.エピソードたち
   table.ui.celled.grey.table
     thead
       tr
-        th = '脳筋エピソード'
-        th = 'チョイス'
+        th = 'エピソード'
+        / th = 'チョイス'
     tbody
     - current_user.questions.each do |question|
-      tr
-        td = link_to "#{question.text}", edit_question_path(question)
-        td = question.choice
+      tr.question-text
+        td = link_to "#{question.text}", edit_question_path(question), style: "word-wrap:break-word;"
+        / td = question.choice

@@ -13,6 +13,7 @@ global.$ = require("jquery")
 
 require("jquery")
 require("jquery-ui")
+// require("jquery-ui-touch-punch-min")
 
 require("packs/flash_message")
 require("./answer/new")
