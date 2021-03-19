@@ -13,7 +13,9 @@ global.$ = require("jquery")
 
 require("jquery")
 require("jquery-ui")
-// require("jquery-ui-touch-punch-min")
+
+// モバイル対応
+require("packs/jquery.ui.touch-punch.js")
 
 require("packs/flash_message")
 require("./answer/new")
