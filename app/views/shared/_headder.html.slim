@@ -16,9 +16,25 @@
               = link_to 'ログアウト', destroy_user_session_path, method: :delete, style: 'color: black;'
             .item
               = link_to 'マイページ編集', edit_user_registration_path(current_user), style: 'color: black;'
+            .item
+              = link_to '管理者へ問合せ', homes_contact_path, style: 'color: black;'
 - else
   .ui.grey.inverted.menu
     = link_to 'ホーム', root_path, class: 'item'
+    / .right.menu
+    /   = link_to 'ログイン', new_user_session_path, class: 'ui item'
+    /   = link_to 'ユーザー登録', new_user_registration_path, class: 'ui item'
     .right.menu
-      = link_to 'ログイン', new_user_session_path, class: 'ui item'
-      = link_to 'ユーザー登録', new_user_registration_path, class: 'ui item'
+      .ui.grey.inverted.menu
+        .ui.simple.dropdown.item
+          .u-name
+            | ログインしていません
+          i.dropdown.icon
+          .ui.menu
+            .item
+              = link_to 'ログイン', new_user_session_path, style: 'color: black;'
+            .item
+              = link_to 'ユーザー登録', new_user_registration_path, style: 'color: black;'
+            .item
+              = link_to '管理者へ問合せ', homes_contact_path, style: 'color: black;'
+

@@ -9,9 +9,6 @@
   font-size: get_vw($font_size);
 }
 
-// p{
-//   @include fz_vw(13);
-// }
 
 .ui.container > h1 {
   max-width: 100%;
@@ -69,5 +66,33 @@
 
 .answer_button_wrapper {
   margin-top: 10px;
+  text-align: center;
+}
+
+.ui.icon.message {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// お問い合わせ
+// パソコン画面用
+@media screen and (min-width:801px) {
+  .ui.icon.message {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+// スマホ、タブレット画面用
+@media screen and (max-width:800px) {
+  .ui.icon.message {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.contact {
   text-align: center;
 }

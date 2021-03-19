@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
   get 'homes/top'
+  # 問合せ窓口
+  get 'homes/contact'
 
   # 診断結果別views
   get 'answers/result100'
