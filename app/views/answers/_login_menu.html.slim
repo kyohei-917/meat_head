@@ -2,9 +2,9 @@
   .ui.large.buttons
     = link_to "https://twitter.com/share?url=#{ request.url }&text=脳筋度を測定してみました！&hashtags=脳筋チェッカー", class: 'ui twitter button', target: '_blank' do
       i.twitter.icon
-      | 結果をTwitterでシェア
+      |結果をシェア
     .or
     = link_to root_path, class: 'ui button' do
-      i.gift.icon
-      | 脳筋エピソードを提供する
+      / i.gift.icon
+      |脳筋エピソードを提供
 
