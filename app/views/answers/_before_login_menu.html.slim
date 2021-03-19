@@ -1,3 +1,5 @@
 .result-menu-wrapper
   .ui.large.buttons
-    = link_to '登録してアナタの脳筋エピソードを提供しよう', new_user_registration_path, class: 'ui button'
+    = link_to new_user_registration_path, class: 'ui button' do
+      i.gift.icon
+      | 登録して脳筋エピソードをシェア

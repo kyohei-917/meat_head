@@ -1,9 +1,6 @@
 $(document).on('turbolinks:load', function() {
   // アンサーフォーム入力時処理
 
-  // $(".ui.text.container").css("color","red")
-
-
   // １問目以外非表示
   $(function() {
     $('#question-1').hide();
