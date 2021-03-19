@@ -76,3 +76,7 @@ gem 'semantic-ui-sass'
 
 # 環境変数
 gem 'dotenv-rails'
+
+# モバイル対応(不要？)
+gem 'jquery-ui-rails'
+gem 'touchpunch-rails'
