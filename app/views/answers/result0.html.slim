@@ -3,7 +3,7 @@
   .ui.text.container
     h1 ノウキンチェッカー
     h2 アナタのノウキン度は、、、
-    br
+    / br
     h1 ０%
     .bread-wrapper
       = image_tag 'satori.jpg', class: 'satori-img'
@@ -13,7 +13,8 @@
       <br>しかし、運動不足にはには気をつけましょう。
       <br>コロナでリモートワークが増えている時代だからこそ
       <br>日々の適度なウンドウをオススメします。
-      <br>心当たりのある方はエニタイムフィットネスへ入会しましょう。
+      <br>心当たりのある方は今すぐ
+      <br>エニタイムフィットネスへGO!
     br
   - if current_user != User.guest && user_signed_in?
     = render 'login_menu'

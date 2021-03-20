@@ -1,52 +1,13 @@
 // 第一引数で基準となる画面幅のフォントサイズ、第二引数で基準となる画面幅を入力
-@function get_vw($size, $viewport:320){
-  $rate: 100 / $viewport;
-  @return $rate * $size * 1vw;
-}
+// @function get_vw($size, $viewport:320){
+//   $rate: 100 / $viewport;
+//   @return $rate * $size * 1vw;
+// }
 
-@mixin fz_vw($font_size:10){
-  font-size: $font_size * 1px;
-  font-size: get_vw($font_size);
-}
-
-.ui.container > h1 {
-  max-width: 100%;
-  font-family: 'gagagaga';
-  // font-size: 5rem;
-  @include fz_vw(20);
-  text-align: center;
-  font-weight: normal;
-}
-
-.ui.container.top > h1 {
-  max-width: 100%;
-  margin-top: 50px;
-  font-family: 'gagagaga';
-  // font-size: 5rem;
-  @include fz_vw(20);
-  text-align: center;
-  font-weight: normal;
-}
-
-.ui.container > h2 {
-  font-family: 'gagagaga';
-  max-width: 100%;
-  white-space: nowrap;
-  // font-size: 2.2rem;
-  @include fz_vw(11);
-  text-align: center;
-  font-weight: normal;
-}
-
-.ui.container > h3 {
-  font-family: 'gagagaga';
-  // font-size: 1.5em;
-  max-width: 100%;
-  @include fz_vw(6);
-  // font-size: 1rem;
-  text-align: center;
-  font-weight: normal;
-}
+// @mixin fz_vw($font_size:10){
+//   font-size: $font_size * 1px;
+//   font-size: get_vw($font_size);
+// }
 
 .answer_button_wrapper {
   margin-top: 10px;
@@ -68,6 +29,42 @@
       margin-left: auto;
       margin-right: auto;
     }
+    // フォント、サイズ
+    .ui.container > h1 {
+      max-width: 100%;
+      font-family: 'gagagaga';
+      font-size: 5rem;
+      // @include fz_vw(20);
+      text-align: center;
+      font-weight: normal;
+    }
+    .ui.container.top > h1 {
+      max-width: 100%;
+      margin-top: 50px;
+      font-family: 'gagagaga';
+      font-size: 5rem;
+      // @include fz_vw(20);
+      text-align: center;
+      font-weight: normal;
+    }
+    .ui.container > h2 {
+      font-family: 'gagagaga';
+      max-width: 100%;
+      white-space: nowrap;
+      font-size: 2.2rem;
+      // @include fz_vw(11);
+      text-align: center;
+      font-weight: normal;
+    }
+    .ui.container > h3 {
+      font-family: 'gagagaga';
+      font-size: 1.5em;
+      max-width: 100%;
+      // @include fz_vw(6);
+      // font-size: 1rem;
+      text-align: center;
+      font-weight: normal;
+    }
     // トップ画像
     #kinniku img {
       max-width: 60%;
@@ -79,7 +76,6 @@
       text-align: center;
       margin-top: 10px;
     }
-
   }
   // スマホ、タブレット画面用
   @media screen and (max-width:800px) {
@@ -87,6 +83,42 @@
       max-width: 80%;
       margin-left: auto;
       margin-right: auto;
+    }
+    // フォント、サイズ
+    .ui.container > h1 {
+      max-width: 100%;
+      font-family: 'gagagaga';
+      font-size: 3rem;
+      // @include fz_vw(20);
+      text-align: center;
+      font-weight: normal;
+    }
+    .ui.container.top > h1 {
+      max-width: 100%;
+      margin-top: 50px;
+      font-family: 'gagagaga';
+      font-size:3rem;
+      // @include fz_vw(20);
+      text-align: center;
+      font-weight: normal;
+    }
+    .ui.container > h2 {
+      font-family: 'gagagaga';
+      max-width: 100%;
+      white-space: nowrap;
+      font-size: 1.5rem;
+      // @include fz_vw(11);
+      text-align: center;
+      font-weight: normal;
+    }
+    .ui.container > h3 {
+      font-family: 'gagagaga';
+      font-size: 0.9em;
+      max-width: 100%;
+      // @include fz_vw(6);
+      // font-size: 1rem;
+      text-align: center;
+      font-weight: normal;
     }
     // トップ画像
     #kinniku img {
