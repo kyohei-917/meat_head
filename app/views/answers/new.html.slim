@@ -1,8 +1,9 @@
 .all
   = render 'shared/headder'
-  .ui.text.container.top
+  .ui.text.container
     h1 ノウキンチェッカー
-    h2 アナタのノウミソはダイジョブですか？
+    / h2 アナタのノウミソはダイジョブですか？
+    h3 YESなら左側 NOなら右側にドロップしてください
 
   = form_with model: [@answer], method: :post do |f|
     - @questions.each_with_index do |question, index|
@@ -16,18 +17,16 @@
           = d.radio_button :choice, :yes, class: "choice-yes-#{index}", style: 'display: none'
           = d.label 'NO', style: 'display: none'
           = d.radio_button :choice, :no, class: "choice-no-#{index}", style: 'display: none'
-          .ui.placeholder.segment
-            .ui.two.column.very.relaxed.stackable.grid
+          .ui.segment
+            .ui.two.column.very.relaxed.grid
               .column.*{id: "droppable-yes-#{index}"}
                 .field
-                  h2.ui.header
-                    / p Y E S
-                    p YES
-              .middle.aligned.column.*{id: "droppable-no-#{index}"}
+                  h1.ui.header
+                    p Y E S
+              .column.*{id: "droppable-no-#{index}"}
                 .field
-                  h2.ui.header
-                    / p N O
-                    p NO
+                  h1.ui.header
+                    p N O
             .ui.vertical.divider
               .draggable-wrapper*{id: "draggable-#{index}"}
                 = f.label question.text, class: 'question-text'
@@ -36,4 +35,3 @@
       h2.aiueo アナタの結果は、、、
     .answer-submit-button-wrapper
       = f.submit '確認する', id: 'answer-submit', class: 'fluid ui button'
-

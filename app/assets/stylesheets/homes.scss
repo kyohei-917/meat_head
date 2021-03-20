@@ -9,7 +9,6 @@
   font-size: get_vw($font_size);
 }
 
-
 .ui.container > h1 {
   max-width: 100%;
   font-family: 'gagagaga';
@@ -49,24 +48,10 @@
   font-weight: normal;
 }
 
-#kinniku {
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-
-#kinniku img {
-  // width: 800px;
-  max-width: 70%;
-  max-height: 70%;
-  // height: 580px;
-  object-fit: cover;
-  opacity: 0.9;
-}
-
 .answer_button_wrapper {
   margin-top: 10px;
   text-align: center;
+  max-width: 100%;
 }
 
 .ui.icon.message {
@@ -76,23 +61,49 @@
 }
 
 // お問い合わせ
-// パソコン画面用
-@media screen and (min-width:801px) {
-  .ui.icon.message {
-    max-width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-// スマホ、タブレット画面用
-@media screen and (max-width:800px) {
-  .ui.icon.message {
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+  // パソコン画面用
+  @media screen and (min-width:801px) {
+    .ui.icon.message {
+      max-width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    // トップ画像
+    #kinniku img {
+      max-width: 60%;
+      // max-height: 70%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+    #kinniku {
+      text-align: center;
+      margin-top: 10px;
+    }
 
-.contact {
-  text-align: center;
-}
+  }
+  // スマホ、タブレット画面用
+  @media screen and (max-width:800px) {
+    .ui.icon.message {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    // トップ画像
+    #kinniku img {
+      max-width: 100%;
+      max-height: auto;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+    #kinniku {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .contact {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
