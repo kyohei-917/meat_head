@@ -80,3 +80,7 @@ gem 'dotenv-rails'
 # モバイル対応(不要？)
 gem 'jquery-ui-rails'
 gem 'touchpunch-rails'
+
+group :production, :staging do
+    gem 'unicorn'
+end
