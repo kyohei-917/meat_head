@@ -1,42 +1,99 @@
-// YES NO エリア
-.ui.placeholder.segment {
-  height: 500px;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+// パソコン。タブレット画面用
+@media screen and (min-width:501px) {
+  // YES NO エリア
+  .ui.segment {
+    height: 700px;
+    // width: auto;
+    max-width: 90%;
+    background-image: url("./kinniku4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ui.two.column.very.relaxed.grid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 2000px;
+    max-width: 90%;
+  }
+  // 質問文
+  .question-text {
+    z-index: 1;
+    font-family: 'corporate';
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  // 質問文丸い玉
+  .draggable-wrapper {
+    width: 230px;
+    height: 230px;
+    background-color: rgb(230, 234, 235);
+    border-radius: 30%;
+    margin-bottom: 500px;
+    border: solid;
+    margin: 0 auto;
+    line-height: 30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+}
+
+// スマホ画面用
+@media screen and (max-width:500px) {
+  // YES NO エリア
+  .ui.segment {
+    margin-top: 50px;
+    height: 550px;
+    max-width: 100%;
+    background-image: url("./kinniku4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ui.two.column.very.relaxed.grid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 2000px;
+    max-width: 100%;
+  }
+  // 質問文
+  .question-text {
+    z-index: 1;
+    font-family: 'corporate';
+    font-size: 0.9em;
+    text-align: center;
+    // font-weight: normal;
+  }
+  // 質問文丸い玉
+  .draggable-wrapper {
+    width: 180px;
+    height: 180px;
+    background-color: rgb(230, 234, 235);
+    border-radius: 30%;
+    margin-bottom: 500px;
+    border: solid;
+    margin: 0 auto;
+    line-height: 30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
 }
 
 .column {
-  height: 500px;
+  height: 700px;
+  width: 600px;
 }
 
-.middle.aligned.column {
-}
-
-.field > h2 {
+.field > h1 {
   text-align: center;
-}
-
-// 質問文
-.question-text {
-  z-index: 1;
-  font-family: 'corporate';
-  font-size: 1.3em;
-  text-align: center;
-  font-weight: normal;
-}
-
-// 質問文丸い玉
-.draggable-wrapper {
-  width: 230px;
-  height: 230px;
-  background-color: rgb(177,174,177);
-  border-radius: 50%;
-  margin: 0 auto;
-  line-height: 30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
 
 // 回答ボタン周り
@@ -46,77 +103,10 @@
 }
 
 .answer-submit-button-wrapper {
-  // text-align: center;
   padding-bottom: 180px;
   max-width: 30%;
   margin-left: auto;
   margin-right: auto;
-}
-
-// 診断結果毎の画像
-  // 100山岸プロ
-
-.yamagishi-wrapper {
-  text-align: center;
-}
-
-.yamagishi-img {
-  width: 300px;
-  max-width: 100%;
-  height: auto;
-  opacity: 0.8;
-}
-
-  // 70ちゃいなマーブル
-
-.china-wrapper {
-  text-align: center;
-}
-
-.china-img {
-  width: 200px;
-  max-width: 100%;
-  height: auto;
-  opacity: 0.8;
-}
-
-  // 50フランスパン
-
-.bread-wrapper {
-  text-align: center;
-}
-
-.bread-img {
-  width: 300px;
-  max-width: 100%;
-  height: auto;
-  opacity: 0.8;
-}
-
-  // 30フリード
-
-.thisis-wrapper {
-  text-align: center;
-}
-
-.thisis-img {
-  width: 350px;
-  max-width: 100%;
-  height: auto;
-  opacity: 0.8;
-}
-
-  // 0悟り
-
-.satori-wrapper {
-  text-align: center;
-}
-
-.satori-img {
-  width: 350px;
-  max-width: 100%;
-  height: auto;
-  opacity: 0.8;
 }
 
 // アナタの結果は、、、
@@ -129,7 +119,5 @@
 .result-menu-wrapper {
   margin-top: 10px;
   text-align: center;
-  // margin-left: auto;
-  // margin-right: auto;
   padding-bottom: 150px;
 }
