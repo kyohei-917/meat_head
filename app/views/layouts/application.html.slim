@@ -1,9 +1,10 @@
 doctype html
 html
   head
+    = display_meta_tags(default_meta_tags)
     meta content="width=device-width, initial-scale=1" name="viewport"
-    title
-      | MeatHead
+    / title
+    /   | MeatHead
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -12,11 +13,5 @@ html
     header
     body
       = render "shared/flash_message"
-
-      / = javascript_include_tag :jquery-ui
-      / = javascript_include_tag :jquery.ui.touch-punch
-      / script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-      / script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
-      / script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"
     = yield
 
