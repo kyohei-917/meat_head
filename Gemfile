@@ -81,6 +81,10 @@ gem 'dotenv-rails'
 gem 'jquery-ui-rails'
 gem 'touchpunch-rails'
 
+# SEO
+gem 'meta-tags'
+
+# unicorn
 group :production, :staging do
     gem 'unicorn'
 end
