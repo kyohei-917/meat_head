@@ -7,9 +7,7 @@
     thead
       tr
         th = 'エピソード'
-        / th = 'チョイス'
     tbody
     - current_user.questions.each do |question|
       tr.question-text
         td = link_to "#{question.text}", edit_question_path(question), style: "word-wrap:break-word;"
-        / td = question.choice
