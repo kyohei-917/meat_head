@@ -40,7 +40,8 @@ group :development, :test do
   gem 'scss_lint', require: false
   # テスト
   gem 'rspec-rails'
-
+  gem 'capybara'
+  gem 'webdrivers'
 end
 
 group :development do
