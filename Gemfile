@@ -41,7 +41,8 @@ group :development, :test do
   # テスト
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'webdrivers'
+  # gem 'webdrivers'
+  gem 'selenium-webdriver'
 end
 
 group :development do
