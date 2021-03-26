@@ -9,23 +9,23 @@ RSpec.describe 'ユーザー登録', type: :system do
       fill_in 'メールアドレス', with: 'example@example.com'
       fill_in 'パスワード', with: 'password'
       click_button 'Sign up'
-      expect(current_path).to eq root_path, '登録完了後にトップページへ遷移していません'
+      expect(current_path).to eq root_path
     end
   end
 
   context '入力情報異常系' do
     it 'ユーザーが新規作成できない' do
-      visit new_user_path
+      visit new_user_registration_path
       fill_in 'メールアドレス', with: 'example@example.com'
-      click_button '登録'
+      click_button 'Sign up'
       expect(current_path).to eq '/users'
       expect(page).to have_content('パスワードを入力してください'), 'パスワードみ入力のエラーメッセージが表示されていません'
     end
 
     it 'ユーザーが新規作成できない' do
-      visit new_user_path
+      visit new_user_registration_path
       fill_in 'パスワード', with: 'password'
-      click_button '登録'
+      click_button 'Sign up'
       expect(current_path).to eq '/users'
       expect(page).to have_content('Eメールを入力してください'), 'Eメール未入力のエラーメッセージが表示されていません'
     end
