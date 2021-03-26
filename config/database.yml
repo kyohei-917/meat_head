@@ -16,7 +16,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: password
-  # host: db
+  # rspec利用時にないとエラー出る
+  host: db
 
 development:
   <<: *default
