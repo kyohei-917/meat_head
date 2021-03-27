@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'ユーザー情報編集', type: :system do
 
   before do
-    @user = FactoryBot.create(:user)
+    @user = build(:user)
   end
 
   describe 'ユーザー情報編集' do
