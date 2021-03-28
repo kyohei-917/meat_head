@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'ログイン・ログアウト', type: :system do
 
   before do
-    @user = FactoryBot.create(:user)
+    @user = build(:user)
   end
 
   describe '通常画面' do
