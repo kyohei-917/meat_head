@@ -1,6 +1,8 @@
 doctype html
 html
   head
+    - if Rails.env.production?
+    = render partial: 'layouts/google_analytics'
     = display_meta_tags(default_meta_tags)
     meta content="width=device-width, initial-scale=1" name="viewport"
     / title
